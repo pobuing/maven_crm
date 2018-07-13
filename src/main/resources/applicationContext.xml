@@ -21,4 +21,10 @@
     <bean name="customerDao" class="com.probuing.mavcrm.dao.impl.CustomerDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <bean name="customerService" class="com.probuing.mavcrm.service.impl.CustomerServiceImpl">
+        <property name="customerDao" ref="customerDao"></property>
+    </bean>
+    <bean name="customerAction" class="com.probuing.mavcrm.action.CustomerAction" scope="prototype">
+        <property name="customerService" ref="customerService"></property>
+    </bean>
 </beans>

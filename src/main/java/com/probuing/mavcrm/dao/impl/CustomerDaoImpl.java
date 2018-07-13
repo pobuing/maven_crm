@@ -10,7 +10,6 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
  * @Description:
  */
 public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao {
-    @Override
     public Customer findById(Long id) {
         Customer customer = this.getHibernateTemplate().get(Customer.class, id);
         return customer;
